@@ -1,0 +1,17 @@
+
+.filter-row{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+.search-box-col{
+    display: flex;
+    justify-content: start;
+    margin-left: 5%;
+}
+.dropdown-col{
+    display: flex;
+    justify-content: end;
+    margin-right: 8%;
+}
