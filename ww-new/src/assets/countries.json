@@ -1,0 +1,69 @@
+[
+    {
+        "name" : "Germany",
+        "population" : 81770900,
+        "region": "Europe",
+        "capital": "Berlin",
+        "subregion":"nebilim",
+        "domain":".de",
+        "currencies":["euro"],
+        "languages":["dutch,arabic,japanese"],
+        "borderCountries":["Turkey","Brazil"]
+    },
+    {
+        "name" : "United States of America",
+        "population" : 323947000,
+        "region": "America",
+        "capital": "Washington, D.C.",
+        "subregion":"nebilim",
+        "domain":".de",
+        "currencies":["euro"],
+        "languages":["dutch,arabic,japanese"],
+        "borderCountries":["Turkey","Brazil"]
+    },
+    {
+        "name" : "Brazil",
+        "population" : 206135893,
+        "region": "America",
+        "capital": "Brasilia",
+        "subregion":"nebilim",
+        "domain":".de",
+        "currencies":["euro"],
+        "languages":["dutch,arabic,japanese"],
+        "borderCountries":["Turkey","Ece"]
+    },
+    {
+        "name" : "Iceland",
+        "population" : 334300,
+        "region": "Europe",
+        "capital": "Reykjavk",
+        "subregion":"nebilim",
+        "domain":".de",
+        "currencies":["euro"],
+        "languages":["dutch,arabic,japanese"],
+        "borderCountries":["Turkey","Brazil"]
+    },
+    {
+        "name" : "Aland Islands",
+        "population" : 28875,
+        "region": "Europe",
+        "capital": "Mariehamn",
+        "subregion":"nebilim",
+        "domain":".de",
+        "currencies":["euro"],
+        "languages":["dutch,arabic,japanese"],
+        "borderCountries":["Turkey","Brazil"]
+    },
+    {
+        "name" : "Turkey",
+        "population" : 80000000,
+        "region": "Asia",
+        "capital": "Ankara",
+        "subregion":"nebilim",
+        "domain":".de",
+        "currencies":["euro"],
+        "languages":["dutch,arabic,japanese"],
+        "borderCountries":["Turkey","Brazil"]
+    }
+
+]

@@ -1,49 +1,45 @@
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { catchError, map, tap, throwError } from "rxjs";
+import { Observable } from "rxjs/internal/Observable";
 import { ICountry } from "./country";
 
 @Injectable({
     providedIn:'root'
 })
 export class CountryService {
-    getCountries(): ICountry[]{
-        return[
-            {
-                "name" : "Germany",
-                "population" : 81770900,
-                "region": "Europe",
-                "capital": "Berlin"
-            },
-            {
-                "name" : "United States of America",
-                "population" : 323947000,
-                "region": "America",
-                "capital": "Washington, D.C."
-            },
-            {
-                "name" : "Brazil",
-                "population" : 206135893,
-                "region": "America",
-                "capital": "Brasilia"
-            },
-            {
-                "name" : "Iceland",
-                "population" : 334300,
-                "region": "Europe",
-                "capital": "Reykjavk"
-            },
-            {
-                "name" : "Aland Islands",
-                "population" : 28875,
-                "region": "Europe",
-                "capital": "Mariehamn"
-            },
-            {
-                "name" : "Turkey",
-                "population" : 80000000,
-                "region": "Asia",
-                "capital": "Ankara"
-            }
-        ]
 
+    private countryURL = 'https://restcountries.com/v2/all?fields=name,nativeName,alpha3Code,population,region,subregion,capital,topLevelDomain,currencies,languages,borders,flags';
+    constructor(private http: HttpClient ){
     }
+    getCountries(): Observable<ICountry[]> {
+        return this.http.get<ICountry[]>(this.countryURL) .pipe(
+            tap(data => console.log('All: ', JSON.stringify(data))),
+            catchError(this.handleError)
+          );
+    }
+    getCountry(name: string): Observable<ICountry | undefined>{
+      return this.getCountries().pipe(
+        map((countries: ICountry[]) => countries.find(c => c.name === name))
+  
+      );
+    }
+
+
+    private handleError(err: HttpErrorResponse): Observable<never> {
+        // in a real world app, we may send the server to some remote logging infrastructure
+        // instead of just logging it to the console
+        let errorMessage = '';
+        if (err.error instanceof ErrorEvent) {
+          // A client-side or network error occurred. Handle it accordingly.
+          errorMessage = `An error occurred: ${err.error.message}`;
+        } else {
+          // The backend returned an unsuccessful response code.
+          // The response body may contain clues as to what went wrong,
+          errorMessage = `Server returned code: ${err.status}, error message is: ${err.message}`;
+        }
+        console.error(errorMessage);
+        return throwError(errorMessage);
+      }
+    
 }

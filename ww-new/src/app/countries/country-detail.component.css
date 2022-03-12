@@ -1,0 +1,27 @@
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    align-items: center;
+}
+
+.btn-light{
+    width: 15%;
+    margin-top: 100px;
+    
+}
+.container-borders{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 5%;
+}
+
+.border-country{
+    cursor: pointer;
+}

@@ -1,0 +1,26 @@
+<button type="button" class="btn btn-light" routerLink="/countries">Back</button>
+<div class="row">
+
+  <div class="col-md-5">
+    <img src={{country!.flags.png}} alt="Card image cap" />
+  </div>
+
+  <div class="col-md-5">
+    <h1>{{ country?.name }}</h1>
+    <p class="text"><strong>Native Name: </strong>{{ country?.nativeName }}</p>
+    <p class="text"><strong>Population: </strong>{{ country?.population }}</p>
+    <p class="text"><strong>Region: </strong>{{ country?.region }}</p>
+    <p class="text"><strong>Sub Region: </strong>{{ country?.subregion }}</p>
+    <p class="text"><strong>Capital: </strong>{{ country?.capital }}</p>
+    <p class="text"><strong>Top Level Domain: </strong>{{ country?.topLevelDomain }}</p>
+    <p class="text"><strong>Currencies: </strong>{{ currencies }}</p>
+    <p class="text"><strong>Languages: </strong>{{ languages }}</p>
+
+    <div class="container-borders">
+        <p>Border Countries: </p>
+        <div class="border-country" *ngFor="let border of country?.borders" (click)="onClick(border)" >{{border}}</div>
+        
+
+    </div>
+  </div>
+</div>

@@ -20,8 +20,8 @@
 </div>
 
 <div class="row country-cards-row" >
-  <div class="card card-1" style="width: 18rem;" *ngFor='let country of filteredCountries'>
-    <img class="card-img-top" src="assets/ACOD_Lightning_Zeus.png" alt="Card image cap">
+  <div class="card card-1" style="width: 18rem;" *ngFor='let country of filteredCountries' (click)="onClickRoute(country.name)">
+    <img class="card-img-top" src={{country?.flags?.png}} alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title ">{{country.name}}</h5>
       <p class="card-text"><strong>Population: </strong>{{country.population}}</p>

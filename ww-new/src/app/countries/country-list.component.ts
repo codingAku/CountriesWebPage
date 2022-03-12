@@ -1,21 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { ICountry } from './country';
 import { CountryService } from './country.service';
 
 @Component({
-  selector: 'ww-country-list',
   templateUrl: './country-list.component.html',
   styleUrls: ['./country-list.component.css']
 })
-export class CountryListComponent implements OnInit {
+export class CountryListComponent implements OnInit, OnDestroy {
   countries: ICountry[] = [];
   filteredCountries: ICountry[] = [];
+  sub: Subscription | undefined;
   private _listFilter =  "";
-  constructor(private countryService: CountryService) { }
+  constructor(private countryService: CountryService, private router: Router) { }
 
   ngOnInit(): void {
-    this.countries = this.countryService.getCountries();
-    this.filteredCountries = this.countries;
+   this.sub = this.countryService.getCountries().subscribe(
+      {
+        next: countries => { 
+          this.countries = countries
+          this.filteredCountries = this.countries;
+        }
+      }
+    );
+  }
+
+  ngOnDestroy(): void {
+      this.sub?.unsubscribe();
   }
 
   get listFilter(): string{
@@ -44,4 +56,7 @@ export class CountryListComponent implements OnInit {
     );
   }
 
+    onClickRoute(name: string){
+      this.router.navigate(['/countries', name]);
+    }
 }
