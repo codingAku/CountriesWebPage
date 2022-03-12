@@ -1,79 +1,32 @@
 <div class="row filter-row">
   <div class="col-md-4 search-box-col">
-    <input type="text" placeholder="Search for a country..." />
+    <input type="text"
+    [(ngModel)] = 'listFilter'
+    placeholder="Search for a country..." 
+     />
   </div>
 
   <div class="col-md-4 dropdown-col">
     <div ngbDropdown class="d-inline-block">
       <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Filter by region</button>
       <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-        <button ngbDropdownItem>Africa</button>
-        <button ngbDropdownItem>America</button>
-        <button ngbDropdownItem>Asia</button>
-        <button ngbDropdownItem>Europe</button>
-        <button ngbDropdownItem>Oceania</button>
+        <button ngbDropdownItem (click)="onClick('Africa')">Africa</button>
+        <button ngbDropdownItem (click)="onClick('America')">America</button>
+        <button ngbDropdownItem (click)="onClick('Asia')">Asia</button>
+        <button ngbDropdownItem (click)="onClick('Europe')">Europe</button>
+        <button ngbDropdownItem (click)="onClick('Oceania')">Oceania</button>
       </div>
   </div>
 </div>
 
-<div class="row country-cards-row">
-  <div class="card card-1" style="width: 18rem;">
+<div class="row country-cards-row" >
+  <div class="card card-1" style="width: 18rem;" *ngFor='let country of filteredCountries'>
     <img class="card-img-top" src="assets/ACOD_Lightning_Zeus.png" alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title ">Kephallonia</h5>
-      <p class="card-text"><strong>Population: </strong>100.000</p>
-      <p class="card-text"><strong>Region: </strong>Greek Lands</p>
-      <p class="card-text"><strong>Capital: </strong>Attika</p>
-      
-    </div>
-  </div>
-  <div class="card card-1" style="width: 18rem;">
-    <img class="card-img-top" src="assets/ACOD_Lightning_Zeus.png" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title ">Kephallonia</h5>
-      <p class="card-text"><strong>Population: </strong>100.000</p>
-      <p class="card-text"><strong>Region: </strong>Greek Lands</p>
-      <p class="card-text"><strong>Capital: </strong>Attika</p>
-      
-    </div>
-  </div>
-  <div class="card card-1" style="width: 18rem;">
-    <img class="card-img-top" src="assets/ACOD_Lightning_Zeus.png" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title ">Kephallonia</h5>
-      <p class="card-text"><strong>Population: </strong>100.000</p>
-      <p class="card-text"><strong>Region: </strong>Greek Lands</p>
-      <p class="card-text"><strong>Capital: </strong>Attika</p>
-      
-    </div>
-  </div>
-  <div class="card card-1" style="width: 18rem;">
-    <img class="card-img-top" src="assets/ACOD_Lightning_Zeus.png" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title ">Kephallonia</h5>
-      <p class="card-text"><strong>Population: </strong>100.000</p>
-      <p class="card-text"><strong>Region: </strong>Greek Lands</p>
-      <p class="card-text"><strong>Capital: </strong>Attika</p>
-      
-    </div>
-  </div>
-  <div class="card card-1" style="width: 18rem;">
-    <img class="card-img-top" src="assets/ACOD_Lightning_Zeus.png" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title ">Kephallonia</h5>
-      <p class="card-text"><strong>Population: </strong>100.000</p>
-      <p class="card-text"><strong>Region: </strong>Greek Lands</p>
-      <p class="card-text"><strong>Capital: </strong>Attika</p>
-      
-    </div>
-  </div>
-  <div class="card card-1" style="width: 18rem;">
-    <img class="card-img-top" src="assets/ACOD_Lightning_Zeus.png" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title ">Kephallonia</h5>
-      <p class="card-text"><strong>Population: </strong>100.000</p>
-      <p class="card-text"><strong>Region: </strong>Greek Lands</p>
-      <p class="card-text"><strong>Capital: </strong>Attika</p>
+      <h5 class="card-title ">{{country.name}}</h5>
+      <p class="card-text"><strong>Population: </strong>{{country.population}}</p>
+      <p class="card-text"><strong>Region: </strong>{{country.region}}</p>
+      <p class="card-text"><strong>Capital: </strong>{{country.capital}}</p>
       
     </div>
   </div>
