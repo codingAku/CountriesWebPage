@@ -1,7 +1,7 @@
 
 .filter-row{
     display: flex;
-    flex-wrap: nowrap;
+    
     justify-content: space-between;
     margin-top: 100px;
 }
@@ -14,4 +14,18 @@
     display: flex;
     justify-content: end;
     margin-right: 8%;
+}
+
+.country-cards-row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 60px;
+    margin: 5%;
+
+    
+    
+}
+.card{
+    width: 30%;
 }
