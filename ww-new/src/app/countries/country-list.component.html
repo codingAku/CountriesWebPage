@@ -1,14 +1,21 @@
-<div class="row filter-row">
-  <div class="col-md-4 search-box-col">
-    <input type="text"
-    [(ngModel)] = 'listFilter'
-    placeholder="Search for a country..." 
-     />
-  </div>
+<div class="container">
+  <div class="container filter">
+    <input
+      class="search-box"
+      type="text"
+      [(ngModel)]="listFilter"
+      placeholder="Search for a country..."
+    />
 
-  <div class="col-md-4 dropdown-col">
-    <div ngbDropdown class="d-inline-block">
-      <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Filter by region</button>
+
+    <div ngbDropdown class="d-inline-block dropdown">
+      <button
+        class="btn btn-outline-primary"
+        id="dropdownBasic1"
+        ngbDropdownToggle
+      >
+        Filter by region
+      </button>
       <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
         <button ngbDropdownItem (click)="onClick('Africa')">Africa</button>
         <button ngbDropdownItem (click)="onClick('America')">America</button>
@@ -16,19 +23,33 @@
         <button ngbDropdownItem (click)="onClick('Europe')">Europe</button>
         <button ngbDropdownItem (click)="onClick('Oceania')">Oceania</button>
       </div>
-  </div>
-</div>
-
-<div class="row country-cards-row" >
-  <div class="card card-1" style="width: 18rem;" *ngFor='let country of filteredCountries' (click)="onClickRoute(country.name)">
-    <img class="card-img-top" src={{country?.flags?.png}} alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title ">{{country.name}}</h5>
-      <p class="card-text"><strong>Population: </strong>{{country.population}}</p>
-      <p class="card-text"><strong>Region: </strong>{{country.region}}</p>
-      <p class="card-text"><strong>Capital: </strong>{{country.capital}}</p>
-      
     </div>
   </div>
-  
+
+  <div class="row country-cards">
+    <div
+      class="card card-1"
+      style="width: 16rem"
+      *ngFor="let country of filteredCountries"
+      (click)="onClickRoute(country.name)"
+    >
+      <img
+        class="card-img-top"
+        src="{{ country?.flags?.png }}"
+        alt="{{ country?.name }}"
+      />
+      <div class="card-body">
+        <h4 class="card-title">{{ country.name }}</h4>
+        <div class="container card-subtext">
+          <p class="card-text">
+            <strong>Population: </strong>{{ country.population }}
+          </p>
+          <p class="card-text"><strong>Region: </strong>{{ country.region }}</p>
+          <p class="card-text">
+            <strong>Capital: </strong>{{ country.capital }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
