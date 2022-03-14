@@ -9,11 +9,11 @@ import { ICountry } from "./country";
 })
 export class CountryService {
 
-    private countryURL = 'https://restcountries.com/v2/all?fields=name,nativeName,alpha3Code,population,region,subregion,capital,topLevelDomain,currencies,languages,borders,flags';
+    private countryURL = 'https://restcountries.com/v2/';
     constructor(private http: HttpClient ){
     }
     getCountries(): Observable<ICountry[]> {
-        return this.http.get<ICountry[]>(this.countryURL) .pipe(
+        return this.http.get<ICountry[]>(this.countryURL+'all?fields=name,nativeName,alpha3Code,population,region,subregion,capital,topLevelDomain,currencies,languages,borders,flags') .pipe(
             tap(data => console.log('All: ', JSON.stringify(data))),
             catchError(this.handleError)
           );
@@ -25,8 +25,15 @@ export class CountryService {
       );
     }
 
+    getCountriesByCode(codes: string[]): Observable<ICountry[]>{
+      return this.http.get<ICountry[]>(
+        `${this.countryURL}/alpha?codes=${codes.join(',')}`
+      );
+    }
+   
 
-    private handleError(err: HttpErrorResponse): Observable<never> {
+
+     private handleError(err: HttpErrorResponse): Observable<never> {
         // in a real world app, we may send the server to some remote logging infrastructure
         // instead of just logging it to the console
         let errorMessage = '';

@@ -63,18 +63,27 @@
 </style>
 
 <!-- Toolbar -->
+<div class="content" role="main" [ngClass]="theme">
 <div class="toolbar" role="banner">
-  <img
-    width="100"
+  <div>
+    <img
+    width="90"
     alt="Alpega Logo"
     src="https://www.alpegagroup.com/typo3conf/ext/sitetemplate/Resources/Public/mediathek/img/alpega_logo.svg"
   />
   <span>Where in the world?</span>
+  </div>
+  
+
+  <div class="test">
+    <span class="fa fa-moon-o"></span>
+    {{ ' ' }}
+    <span>Dark mode</span>
+  </div>
   
 
 </div>
 
-<div class="content" role="main">
     <router-outlet class="routing"></router-outlet>
 
 </div>
