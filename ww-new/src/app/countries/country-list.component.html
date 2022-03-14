@@ -1,23 +1,33 @@
-<div class="container">
-  <div class="container filter">
+<div class="container country-list-router">
+  <div class="filter">
+    <div class="input-group-append">
+      <span class="input-group-text search-icon" id="basic-addon1"
+        ><i class="bi bi-search"></i
+      ></span>
+    </div>
     <input
       class="search-box"
       type="text"
       [(ngModel)]="listFilter"
       placeholder="Search for a country..."
     />
+    <div class="spacer"></div>
 
-
-    <div ngbDropdown class="d-inline-block dropdown">
+    <div ngbDropdown class="dropdown">
       <button
-        class="btn btn-outline-primary"
+        class="btn btn-outline-primary filter-by-region"
         id="dropdownBasic1"
         ngbDropdownToggle
       >
-        Filter by region
+        Filter by Region
+        <i class="bi bi-chevron-down"></i>
       </button>
-      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-        <button ngbDropdownItem (click)="onClick('Africa')">Africa</button>
+      <div
+        ngbDropdownMenu
+        aria-labelledby="dropdownBasic1"
+        class="dropdown-body"
+      >
+        <button class="dropdown-content" ngbDropdownItem (click)="onClick('Africa')">Africa</button>
         <button ngbDropdownItem (click)="onClick('America')">America</button>
         <button ngbDropdownItem (click)="onClick('Asia')">Asia</button>
         <button ngbDropdownItem (click)="onClick('Europe')">Europe</button>
@@ -26,7 +36,7 @@
     </div>
   </div>
 
-  <div class="row country-cards">
+  <div class="country-cards">
     <div
       class="card card-1"
       style="width: 16rem"

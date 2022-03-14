@@ -1,4 +1,3 @@
-@font-face {
-    font-family: Poppins;
-    src: url("src/assets/Poppins-Regular.ttf") format("opentype");
-  }
+body{
+    font-family: 'Poppins', sans-serif;
+}
