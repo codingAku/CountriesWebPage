@@ -3,7 +3,7 @@
     Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
   font-size: 14px;
-  color: #333;
+
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -18,9 +18,16 @@ h6 {
   margin: 8px 0;
 }
 
-.content {
-  background-color: #f7f7f7;
+.app-container {
   width: 100%;
+}
+.app-container.dark {
+  background-color: var(--d-bg);
+  color: var(--d-text);
+}
+.app-container.light {
+  background-color: var(--l-bg);
+  color: var(--l-text);
 }
 
 .toolbar {
@@ -33,25 +40,32 @@ h6 {
   left: 0;
   right: 0;
   height: 60px;
-  background-color: white;
-  color: black;
   font-weight: 600;
+}
+.toolbar.dark {
+  background-color: var(--d-element);
+  color: var(--d-text);
+}
+.toolbar.light {
+  background-color: var(--l-element);
+  color: var(--l-text);
 }
 
 .toolbar img {
   margin: 0 20px;
 }
 
-.d1 {
+.toolbar-logo-text-container {
   display: flex;
   padding: 1%;
 }
-.spacer {
+.toolbar-theme-text {
   margin-left: 5px;
 }
-.d2 {
+.toolbar-theme-container {
   display: flex;
   align-items: center;
+  cursor: pointer;
   padding: 1%;
   margin-right: 8%;
 }

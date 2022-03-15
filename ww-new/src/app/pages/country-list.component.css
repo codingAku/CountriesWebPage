@@ -1,11 +1,10 @@
-.d1 {
+.country-list-container {
   display: flex;
   flex-direction: column;
-  background-color: #f7f7f7;
   min-height: 100vh;
 }
 
-.d2 {
+.filtering-items-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -14,13 +13,12 @@
   margin-left: 1.5%;
   padding: 0px;
 }
-.d3 {
+.input-group-container {
   display: flex;
   flex-direction: row;
   flex: auto;
 }
 .search-icon {
-  background-color: white;
   border: 0px;
   box-shadow: -5px 0px 14px 4px rgba(0, 0, 0, 0.05);
   border-radius: 5px;
@@ -29,15 +27,14 @@
 .search-box {
   flex: auto;
   border: 0px;
-  background-color: white;
   box-shadow: 10px 0px 14px 4px rgba(0, 0, 0, 0.05);
   border-radius: 5px;
 }
+
 .bi {
   padding: 10px;
 }
 
-textarea:focus,
 input:focus {
   outline: none;
 }
@@ -46,18 +43,16 @@ input:focus {
   flex: 4;
 }
 
-.d4 {
+.dropdown-container {
   justify-content: end;
 }
-.filter-by-region {
+.dropdown-btn {
   padding: 15px;
   border: 0ch;
   border-radius: 5px;
-  background-color: white;
-  color: black;
   box-shadow: 0px 0px 14px 4px rgba(0, 0, 0, 0.05);
 }
-.dropdown-body {
+.dropdown-body-container {
   margin-top: 5px !important;
   position: relative;
   border: 0px;
@@ -68,7 +63,7 @@ input:focus {
   border: 0px;
 }
 
-.d7 {
+.country-cards-container {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -88,7 +83,7 @@ input:focus {
   box-shadow: 0px 0px 14px 4px rgba(0, 0, 0, 0.1);
 }
 
-.card-img-top {
+.card-img {
   height: 50%;
 }
 
@@ -97,21 +92,20 @@ input:focus {
   font-weight: bolder;
 }
 
-.card-subheaders {
+.card-subtitles {
   align-content: center;
   margin-top: 18px;
   padding: 0%;
-  background-color: white;
 }
 .card-text {
   margin: 0%;
   font-size: small;
 }
 @media screen and (max-width: 378px) {
-  .d2 {
+  .filtering-items-container {
     flex-direction: column;
   }
-  .filter-by-region {
+  .dropdown-container {
     margin-top: 5px;
   }
   .card {
@@ -120,4 +114,13 @@ input:focus {
   .dropdown-body {
     width: 100%;
   }
+}
+
+:host-context(.dark) .theme {
+  background-color: var(--d-element);
+  color: var(--d-text);
+}
+:host-context(.light) .theme {
+  background-color: var(--l-element);
+  color: var(--l-text);
 }

@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { ICountry } from '../interfaces/country';
 import { CountryService } from '../services/country.service';
-import { ICountry } from './country';
 
 @Component({
   templateUrl: './country-list.component.html',

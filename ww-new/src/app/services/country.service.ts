@@ -2,7 +2,8 @@ import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { catchError, map, tap, throwError } from "rxjs";
 import { Observable } from "rxjs/internal/Observable";
-import { ICountry } from "../pages/country";
+import { ICountry } from "../interfaces/country";
+
 
 @Injectable({
     providedIn:'root'

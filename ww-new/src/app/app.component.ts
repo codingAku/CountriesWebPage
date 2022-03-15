@@ -8,7 +8,6 @@ import { ThemeService } from './services/theme.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  title = 'ww-new';
   theme!: Observable<string>;
 
   constructor(
@@ -16,9 +15,13 @@ export class AppComponent implements OnInit{
   ) {}
 
     ngOnInit(): void {
-        this.theme = this.themeService.mode$;
+        this.theme = this.themeService.observable$;
     }
    
+    toggleTheme(){
+      this.themeService.toggleobservable();
+    }
+
 
  
 }

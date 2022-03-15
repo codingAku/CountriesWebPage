@@ -1,12 +1,12 @@
-<div class="container d1">
+<div class="container country-list-container">
   <!--Filtering items-->
-  <div class="d2">
-    <div class="d3">
-      <span class="input-group-text search-icon" id="basic-addon1"
+  <div class="filtering-items-container">
+    <div class="input-group-container">
+      <span class="input-group-text theme search-icon" id="basic-addon1"
         ><i class="bi bi-search"></i
       ></span>
       <input
-        class="search-box"
+        class="theme search-box"
         type="text"
         [(ngModel)]="listFilter"
         placeholder="Search for a country..."
@@ -15,9 +15,9 @@
 
     <div class="spacer"></div>
 
-    <div ngbDropdown class="d4">
+    <div ngbDropdown class="dropdown-container">
       <button
-        class="btn btn-outline-primary filter-by-region"
+        class="btn btn-outline-primary theme dropdown-btn"
         id="dropdownBasic1"
         ngbDropdownToggle
       >
@@ -27,32 +27,42 @@
       <div
         ngbDropdownMenu
         aria-labelledby="dropdownBasic1"
-        class="dropdown-body"
+        class="theme dropdown-body-container"
       >
-        <button ngbDropdownItem (click)="onClick('Africa')">Africa</button>
-        <button ngbDropdownItem (click)="onClick('America')">America</button>
-        <button ngbDropdownItem (click)="onClick('Asia')">Asia</button>
-        <button ngbDropdownItem (click)="onClick('Europe')">Europe</button>
-        <button ngbDropdownItem (click)="onClick('Oceania')">Oceania</button>
+        <button class="theme" ngbDropdownItem (click)="onClick('Africa')">
+          Africa
+        </button>
+        <button class="theme" ngbDropdownItem (click)="onClick('America')">
+          America
+        </button>
+        <button class="theme" ngbDropdownItem (click)="onClick('Asia')">
+          Asia
+        </button>
+        <button class="theme" ngbDropdownItem (click)="onClick('Europe')">
+          Europe
+        </button>
+        <button class="theme" ngbDropdownItem (click)="onClick('Oceania')">
+          Oceania
+        </button>
       </div>
     </div>
   </div>
 
   <!--Country Cards-->
-  <div class="d7">
+  <div class="country-cards-container">
     <div
-      class="card"
+      class="theme card"
       *ngFor="let country of filteredCountries"
       (click)="onClickRoute(country.name)"
     >
       <img
-        class="card-img-top"
+        class="card-img"
         src="{{ country?.flags?.png }}"
         alt="{{ country?.name }}"
       />
       <div class="card-body">
         <h4 class="card-title">{{ country.name }}</h4>
-        <div class="container card-subheaders">
+        <div class="container card-subtitles">
           <p class="card-text">
             <strong>Population: </strong
             >{{ country.population | number: "1.0" }}

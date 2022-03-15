@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ICountry } from './country';
-import { ICurrency } from './currency';
-
-import { ILanguage } from './language';
+import { ICountry } from '../interfaces/country';
+import { ICurrency } from '../interfaces/currency';
+import { ILanguage } from '../interfaces/language';
 import { CountryService } from '../services/country.service';
 
 @Component({

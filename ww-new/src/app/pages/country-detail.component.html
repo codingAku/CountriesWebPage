@@ -1,18 +1,18 @@
-<div class="container">
-  <button type="button" class="btn back" routerLink="/countries">
+<div class="container country-detail-container">
+  <button type="button" class="btn theme back-btn" routerLink="/countries">
     <i class="bi bi-arrow-left"></i>
     Back
   </button>
-  <div class="d1">
-    <div class="d2">
-      <img class="img-fluid country-flag-img" src="{{ country!.flags.png }}" alt="Card image cap" />
+  <div class="country-text-flag-container">
+    <div class="country-flag-container">
+      <img class="img-fluid" src="{{ country!.flags.png }}" alt="{{country?.name}}" />
     </div>
-    <div class="d3">
-      <div class="d4">
+    <div class="country-text-container">
+      <div class="country-text-name-container">
         <h1 class=>{{ country?.name }}</h1>
       </div>
-      <div class="d5">
-        <div class="d7">
+      <div class="country-text-columns">
+        <div>
           <p class="text">
             <strong>Native Name: </strong>{{ country?.nativeName }}
           </p>
@@ -21,7 +21,7 @@
           <p class="text"><strong>Sub Region: </strong>{{ country?.subregion }}</p>
           <p class="text"><strong>Capital: </strong>{{ country?.capital }}</p>
         </div>
-        <div class="d8">
+        <div>
           <p class="text">
             <strong>Top Level Domain: </strong>{{ country?.topLevelDomain }}
           </p>
@@ -30,13 +30,13 @@
 
         </div>
       </div>
-      <div class="d6">
-        <div class="d9">
-          <p>Border Countries:</p>
+      <div class="border-countries-container">
+        <div class="border-countries-header">
+          <strong>Border Countries:</strong>
         </div>
-        <div class="d10">
+        <div class="border-country-tags">
           <span
-            class="badge border-country-tag"
+            class="badge theme border-country-tag"
             *ngFor="let border of borderCountries"
             (click)="onClick(border)"
           >

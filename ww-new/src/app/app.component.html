@@ -1,23 +1,24 @@
-
-<div class="content" role="main">
-
-  <div class="toolbar" role="banner">
-    <div class="d1">
-      <img class="toolbar-logo"
-      width="80"
-      alt="Alpega Logo"
-      src="https://www.alpegagroup.com/typo3conf/ext/sitetemplate/Resources/Public/mediathek/img/alpega_logo.svg"
+<div class="app-container" [ngClass]="(theme | async)!" role="main">
+  <div class="toolbar" [ngClass]="(theme | async)!" role="banner">
+    <div class="toolbar-logo-text-container">
+      <img
+        class="toolbar-logo"
+        width="80"
+        alt="Alpega Logo"
+        src="https://www.alpegagroup.com/typo3conf/ext/sitetemplate/Resources/Public/mediathek/img/alpega_logo.svg"
       />
       <div class="toolbar-text">Where in the world?</div>
     </div>
 
-    <div class="d2">
-      <span class="fa fa-moon-o"></span>
-      {{ ' ' }}
-      <div class="spacer">Dark mode</div>
+    <div class="toolbar-theme-container" (click)="toggleTheme()">
+      <span
+        [ngClass]="
+          (theme | async) === 'dark' ? 'bi bi-moon-fill' : 'bi bi-moon'
+        "
+      ></span>
+      {{ " " }}
+      <div class="toolbar-theme-text">Dark mode</div>
     </div>
   </div>
-  <router-outlet class="routing"></router-outlet>
-  
+  <router-outlet></router-outlet>
 </div>
-

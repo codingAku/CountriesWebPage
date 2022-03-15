@@ -7,19 +7,19 @@ import { BehaviorSubject, Observable } from 'rxjs';
     providedIn: 'root',
 })
 export class ThemeService {
-    private mode: BehaviorSubject<string> = new BehaviorSubject('light');
+    private observable: BehaviorSubject<string> = new BehaviorSubject('light');
     
     constructor() {}
     
-    get mode$(): Observable<string> {
-        return this.mode.asObservable();
+    get observable$(): Observable<string> {
+        return this.observable.asObservable();
     }
     
-    toggleMode() {
-        if (this.mode.value === 'light') {
-            this.mode.next('dark');
+    toggleobservable() {
+        if (this.observable.value === 'light') {
+            this.observable.next('dark');
         } else {
-            this.mode.next('light');
+            this.observable.next('light');
         }
     }
 }

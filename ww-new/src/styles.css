@@ -2,10 +2,10 @@
   
     --d-bg: hsl(207, 26%, 17%);
     --d-element: hsl(209, 23%, 22%);
-    --d-text: var(white);
+    --d-text: rgb(255, 255, 255);
   
     --l-bg: #F7F7F7;
-    --l-element: var(white);
+    --l-element:rgb(255, 255, 255);
     --l-text: hsl(200, 15%, 8%);
     --l-input: hsl(0, 0%, 52%);
   }

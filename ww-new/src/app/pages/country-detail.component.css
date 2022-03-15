@@ -1,12 +1,11 @@
-.container {
+.country-detail-container {
   display: flex;
-  background-color: #f7f7f7;
+  background-color: inherit;
   flex-direction: column;
   align-items: flex-start;
 }
 
-.back {
-  background-color: white;
+.back-btn {
   border-radius: 5px;
   box-shadow: 0px 0px 14px 4px rgba(0, 0, 0, 0.1);
   padding: 10px;
@@ -16,7 +15,7 @@
 .bi-arrow-left {
   margin-right: 5px;
 }
-.d1 {
+.country-text-flag-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -25,46 +24,46 @@
   width: 100%;
 }
 
-.d2 {
+.country-flag-container {
   flex-basis: 50%;
   height: 65%;
 }
 
-.country-flag-img {
+.country-flag-container img {
   box-shadow: 0px 0px 14px 4px rgba(0, 0, 0, 0.3);
   height: 100%;
 }
 
-.d3 {
+.country-text-container {
   display: flex;
   flex-wrap: wrap;
   margin-right: 5%;
   flex-basis: 35%;
   flex-direction: column;
 }
-.d4 {
+.country-name-container {
   margin-bottom: 15px;
 }
-.d5 {
+.country-text-columns {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.d6 {
+.border-countries-container {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: stretch;
 }
 
-.d9 {
+.border-countries-header {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-content: center;
 }
-.d10 {
+.border-country-tags {
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
@@ -88,14 +87,23 @@
 }
 
 @media screen and (max-width: 378px) {
-  .d1 {
+  .country-text-flag-container {
     flex-direction: column;
   }
-  .d3 {
-    margin-right: 0px;
-  }
-  .back {
+  .back-btn {
     width: 50%;
     margin-bottom: 5px;
   }
+  .country-flag-container {
+    margin-right: 0px;
+  }
+}
+
+:host-context(.dark) .theme {
+  background-color: var(--d-element);
+  color: var(--d-text);
+}
+:host-context(.light) .theme {
+  background-color: var(--l-element);
+  color: var(--l-text);
 }
