@@ -3,10 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ICountry } from './country';
 import { ICurrency } from './currency';
 
-import { CountryService } from './country.service';
 import { ILanguage } from './language';
-import { fromJSDate } from '@ng-bootstrap/ng-bootstrap/datepicker/ngb-calendar';
-import { mergeMap } from 'rxjs';
+import { CountryService } from '../services/country.service';
 
 @Component({
   selector: 'ww-country-detail',

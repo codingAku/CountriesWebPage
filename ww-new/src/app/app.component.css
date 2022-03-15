@@ -1,24 +1,80 @@
-.content{
-    border: 5px solid;
-    background-color: #F7F7F7;
-    width: 100%;
+:host {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-.light {
-    background-color: var(--l-bg);
-    color: var(--l-text);
-  }
-  
-  .dark {
-    background-color: var(--d-bg);
-    color: var(--d-text);
-  }
 
-.toolbar{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 8px 0;
+}
+
+
+
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  color: black;
+  font-weight: 600;
 }
-.test{
-    margin-right: 4%;
 
+.toolbar img {
+  margin: 0 16px;
 }
+
+
+
+.card {
+  all: unset;
+  border-radius: 4px;
+  border: 1px solid #eee;
+  background-color: #fafafa;
+  height: 40px;
+  width: 200px;
+  margin: 0 8px 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  line-height: 24px;
+}
+
+
+.content{
+    background-color: #F7F7F7;
+    width: 100%;
+}
+
+.d2{
+  display: flex;
+  align-items: center;
+  padding: 1%;
+  margin-right: 8%;
+  
+}
+.spacer{
+  margin-left: 5px;
+}
+.d1{
+  display: flex;
+  padding: 1%;
+}
+

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CountryDetailComponent } from './countries/country-detail.component';
-import { CountryListComponent } from './countries/country-list.component';
+import { CountryDetailComponent } from './pages/country-detail.component';
+import { CountryListComponent } from './pages/country-list.component';
 
 const routes: Routes = [
   {path:'countries', component: CountryListComponent},

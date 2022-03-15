@@ -1,90 +1,27 @@
 
-<style>
-  :host {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 14px;
-    color: #333;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+<div class="content" role="main">
+  <div class="toolbar" role="banner">
+    <div class="d1">
+      <img class="toolbar-logo"
+      width="80"
+      alt="Alpega Logo"
+      src="https://www.alpegagroup.com/typo3conf/ext/sitetemplate/Resources/Public/mediathek/img/alpega_logo.svg"
+      />
+      <div class="toolbar-text">Where in the world?</div>
+    </div>
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 8px 0;
-  }
+    
+    <div class="d2">
+      <span class="fa fa-moon-o"></span>
+      {{ ' ' }}
+      <div class="spacer">Dark mode</div>
+    </div>
 
-  
+    
 
-  .toolbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    background-color: white;
-    color: black;
-    font-weight: 600;
-  }
-
-  .toolbar img {
-    margin: 0 16px;
-  }
-
-
-  
-  .card {
-    all: unset;
-    border-radius: 4px;
-    border: 1px solid #eee;
-    background-color: #fafafa;
-    height: 40px;
-    width: 200px;
-    margin: 0 8px 16px;
-    padding: 16px;
-    display: flex;
-    flex-direction: row;
-    justify-content:center;
-    align-items: center;
-    transition: all 0.2s ease-in-out;
-    line-height: 24px;
-  }
-
- 
-
-  /* Responsive Styles */
-  
-</style>
-
-<!-- Toolbar -->
-<div class="content" role="main" [ngClass]="theme">
-<div class="toolbar" role="banner">
-  <div>
-    <img
-    width="90"
-    alt="Alpega Logo"
-    src="https://www.alpegagroup.com/typo3conf/ext/sitetemplate/Resources/Public/mediathek/img/alpega_logo.svg"
-  />
-  <span>Where in the world?</span>
   </div>
-  
 
-  <div class="test">
-    <span class="fa fa-moon-o"></span>
-    {{ ' ' }}
-    <span>Dark mode</span>
-  </div>
-  
-
-</div>
-
-    <router-outlet class="routing"></router-outlet>
+      <router-outlet class="routing"></router-outlet>
 
 </div>
 

@@ -1,19 +1,20 @@
-<div class="container country-list-router">
-  <div class="filter">
-    <div class="search-filter">
+<div class="container d1">
+  <div class="d2">
+    <div class="d3">
       <span class="input-group-text search-icon" id="basic-addon1"
         ><i class="bi bi-search"></i
-          ></span>
-        </div>
+      ></span>
       <input
-      class="search-box"
-      type="text"
-      [(ngModel)]="listFilter"
-      placeholder="Search for a country..."
+        class="search-box"
+        type="text"
+        [(ngModel)]="listFilter"
+        placeholder="Search for a country..."
       />
+    </div>
+
     <div class="spacer"></div>
 
-    <div ngbDropdown class="dropdown">
+    <div ngbDropdown class="d4">
       <button
         class="btn btn-outline-primary filter-by-region"
         id="dropdownBasic1"
@@ -27,7 +28,13 @@
         aria-labelledby="dropdownBasic1"
         class="dropdown-body"
       >
-        <button class="dropdown-content" ngbDropdownItem (click)="onClick('Africa')">Africa</button>
+        <button
+          class="dropdown-content"
+          ngbDropdownItem
+          (click)="onClick('Africa')"
+        >
+          Africa
+        </button>
         <button ngbDropdownItem (click)="onClick('America')">America</button>
         <button ngbDropdownItem (click)="onClick('Asia')">Asia</button>
         <button ngbDropdownItem (click)="onClick('Europe')">Europe</button>
@@ -35,8 +42,7 @@
       </div>
     </div>
   </div>
-
-  <div class="country-cards">
+  <div class="d7">
     <div
       class="card card-1"
       *ngFor="let country of filteredCountries"
@@ -51,9 +57,12 @@
         <h4 class="card-title">{{ country.name }}</h4>
         <div class="container card-subtext">
           <p class="card-text">
-            <strong>Population: </strong>{{ country.population | number: "1.0" }}
+            <strong>Population: </strong
+            >{{ country.population | number: "1.0" }}
           </p>
-          <p class="card-text"><strong>Region: </strong>{{ country.region }}</p>
+          <p class="card-text">
+            <strong>Region: </strong>{{ country.region }}
+          </p>
           <p class="card-text">
             <strong>Capital: </strong>{{ country.capital }}
           </p>
@@ -61,4 +70,5 @@
       </div>
     </div>
   </div>
+  
 </div>

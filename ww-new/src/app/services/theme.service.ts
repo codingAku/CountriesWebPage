@@ -1,28 +1,25 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
-export enum Theme {
-  light = 'light',
-  dark = 'dark',
-}
+
 
 @Injectable({
     providedIn: 'root',
 })
 export class ThemeService {
-    private mode: BehaviorSubject<any> = new BehaviorSubject(Theme.light);
+    private mode: BehaviorSubject<string> = new BehaviorSubject('light');
     
     constructor() {}
     
-    get mode$(): Observable<Theme> {
+    get mode$(): Observable<string> {
         return this.mode.asObservable();
     }
     
     toggleMode() {
-        if (this.mode.value === Theme.light) {
-            this.mode.next(Theme.dark);
+        if (this.mode.value === 'light') {
+            this.mode.next('dark');
         } else {
-            this.mode.next(Theme.light);
+            this.mode.next('light');
         }
     }
 }
