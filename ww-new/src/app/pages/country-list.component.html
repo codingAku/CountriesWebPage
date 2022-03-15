@@ -1,4 +1,5 @@
 <div class="container d1">
+  <!--Filtering items-->
   <div class="d2">
     <div class="d3">
       <span class="input-group-text search-icon" id="basic-addon1"
@@ -28,13 +29,7 @@
         aria-labelledby="dropdownBasic1"
         class="dropdown-body"
       >
-        <button
-          class="dropdown-content"
-          ngbDropdownItem
-          (click)="onClick('Africa')"
-        >
-          Africa
-        </button>
+        <button ngbDropdownItem (click)="onClick('Africa')">Africa</button>
         <button ngbDropdownItem (click)="onClick('America')">America</button>
         <button ngbDropdownItem (click)="onClick('Asia')">Asia</button>
         <button ngbDropdownItem (click)="onClick('Europe')">Europe</button>
@@ -42,9 +37,11 @@
       </div>
     </div>
   </div>
+
+  <!--Country Cards-->
   <div class="d7">
     <div
-      class="card card-1"
+      class="card"
       *ngFor="let country of filteredCountries"
       (click)="onClickRoute(country.name)"
     >
@@ -55,14 +52,12 @@
       />
       <div class="card-body">
         <h4 class="card-title">{{ country.name }}</h4>
-        <div class="container card-subtext">
+        <div class="container card-subheaders">
           <p class="card-text">
             <strong>Population: </strong
             >{{ country.population | number: "1.0" }}
           </p>
-          <p class="card-text">
-            <strong>Region: </strong>{{ country.region }}
-          </p>
+          <p class="card-text"><strong>Region: </strong>{{ country.region }}</p>
           <p class="card-text">
             <strong>Capital: </strong>{{ country.capital }}
           </p>
@@ -70,5 +65,4 @@
       </div>
     </div>
   </div>
-  
 </div>

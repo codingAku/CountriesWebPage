@@ -15,7 +15,7 @@ import { CountryListComponent } from './pages/country-list.component';
   declarations: [
     AppComponent,
     CountryListComponent,
-    CountryDetailComponent
+    CountryDetailComponent,
   ],
   imports: [
     BrowserModule,
