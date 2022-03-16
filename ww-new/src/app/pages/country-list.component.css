@@ -70,6 +70,13 @@ input:focus {
   justify-content: flex-start;
   margin-top: 5%;
 }
+.no-matches{
+  color: rgb(228, 225, 225);
+  font-weight: 900;
+  font-size: xx-large;
+  padding: 5%;
+  margin: auto;
+}
 .card {
   flex-basis: 22%;
   margin-right: 1.5%;

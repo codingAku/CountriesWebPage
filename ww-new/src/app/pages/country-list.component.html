@@ -49,7 +49,9 @@
   </div>
 
   <!--Country Cards-->
-  <div class="country-cards-container">
+  <div class="country-cards-container"
+  >
+    <div class="no-matches" *ngIf="!filteredCountries.length">No matches</div>
     <div
       class="theme card"
       *ngFor="let country of filteredCountries"
