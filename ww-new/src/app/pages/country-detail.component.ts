@@ -50,6 +50,14 @@ export class CountryDetailComponent implements OnInit {
   }
 
   onClick(name: string) {
-    this.router.navigate(['/countries', name]);
+    this.router.navigate(['/countries', name],
+      {
+        queryParamsHandling:'preserve'
+      }
+    );
+  }
+
+  onBack(){
+    history.back();
   }
 }

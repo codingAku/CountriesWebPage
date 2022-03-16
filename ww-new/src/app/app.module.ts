@@ -20,9 +20,9 @@ import { CountryListComponent } from './pages/country-list.component';
   imports: [
     BrowserModule,
     NgbModule,
-    AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
