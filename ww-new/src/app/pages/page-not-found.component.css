@@ -1,0 +1,19 @@
+.error-page-container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+
+:host-context(.dark) .theme {
+    background-color: var(--d-element);
+    color: var(--d-text);
+  }
+  :host-context(.light) .theme {
+    background-color: var(--l-element);
+    color: var(--l-text);
+  }

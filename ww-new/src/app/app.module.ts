@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CountryDetailComponent } from './pages/country-detail.component';
 import { CountryListComponent } from './pages/country-list.component';
+import { PageNotFoundComponent } from './pages/page-not-found.component';
 
 
 
@@ -16,6 +17,7 @@ import { CountryListComponent } from './pages/country-list.component';
     AppComponent,
     CountryListComponent,
     CountryDetailComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
