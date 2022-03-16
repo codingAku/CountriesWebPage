@@ -64,6 +64,7 @@ export class CountryListComponent implements OnInit, OnDestroy {
   onClickRoute(name: string) {
     this.router.navigate(['/countries', name], {
       queryParams: { filterBy: this.listFilter },
+      
     });
   }
 }

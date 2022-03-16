@@ -58,6 +58,10 @@ export class CountryDetailComponent implements OnInit {
   }
 
   onBack(){
-    history.back();
+    this.router.navigate(['/countries'],
+    {
+      queryParamsHandling:'preserve'
+    }
+  );
   }
 }
