@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { ICountry } from '../interfaces/country';
 import { ICurrency } from '../interfaces/currency';
 import { ILanguage } from '../interfaces/language';
@@ -15,6 +16,7 @@ export class CountryDetailComponent implements OnInit {
   currencies: string[] | undefined;
   languages: string[] | undefined;
   borderCountries: string[] = [];
+  sub!: Subscription;
   errorMessage = '';
   constructor(
     private route: ActivatedRoute,
@@ -23,7 +25,7 @@ export class CountryDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe((params) => {
+    this.sub = this.route.paramMap.subscribe((params) => {
       const name = String(params.get('name'));
       this.getCountry(name);
     });
@@ -63,5 +65,9 @@ export class CountryDetailComponent implements OnInit {
       queryParamsHandling:'preserve'
     }
   );
+  }
+
+  ngOnDestroy(){
+    this.sub?.unsubscribe();
   }
 }
